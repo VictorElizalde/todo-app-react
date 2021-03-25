@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import update from 'immutability-helper'
 
-
 class TodosContainer extends Component {
   constructor(props) {
     super(props)
@@ -38,14 +37,14 @@ class TodosContainer extends Component {
             {this.state.todos.map((todo) => {
               return(
                 <li className="task" todo={todo} key={todo.id}>
-            <input className="taskCheckbox" type="checkbox"
-              checked={todo.done}
-              onChange={(e) => this.updateTodo(e, todo.id)} />              
-            <label className="taskLabel">{todo.title}</label>
-            <span className="deleteTaskBtn" 
-              onClick={(e) => this.deleteTodo(todo.id)}>
-              x
-            </span>
+                  <input className="taskCheckbox" type="checkbox"
+                    checked={todo.done}
+                    onChange={(e) => this.updateTodo(e, todo.id)} />              
+                  <label className="taskLabel">{todo.title}</label>
+                  <span className="deleteTaskBtn" 
+                    onClick={(e) => this.deleteTodo(todo.id)}>
+                    x
+                  </span>
                 </li>
               )       
             })} 	    
